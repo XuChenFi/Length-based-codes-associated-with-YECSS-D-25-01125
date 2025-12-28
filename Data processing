@@ -1,0 +1,55 @@
+library(dplyr)
+#Annual data processing used for LIME input
+data<-read.csv("data/Year.csv")
+data[,"Frequency"]<-ceiling(data[,"Frequency"])
+x<-subset(data, Year == 2007)
+y<-c()
+for(i in 1:nrow(x)){
+  y<-c(y, rep(x[i,"Length"], x[i, "Frequency"]))
+}
+data1<-as.data.frame(matrix(c(rep(1, sum(x$Frequency)), rep(x[2, "Year"], sum(x$Frequency)), y), ncol=3, nrow=sum(x$Frequency)))
+x<-subset(data, Year == 2011)
+y<-c()
+for(i in 1:nrow(x)){
+  y<-c(y, rep(x[i,"Length"], x[i, "Frequency"]))
+}
+data2<-as.data.frame(matrix(c(rep(1, sum(x$Frequency)), rep(x[2, "Year"], sum(x$Frequency)), y), ncol=3, nrow=sum(x$Frequency)))
+x<-subset(data, Year == 2013)
+y<-c()
+for(i in 1:nrow(x)){
+  y<-c(y, rep(x[i,"Length"], x[i, "Frequency"]))
+}
+data3<-as.data.frame(matrix(c(rep(1, sum(x$Frequency)), rep(x[2, "Year"], sum(x$Frequency)), y), ncol=3, nrow=sum(x$Frequency)))
+x<-subset(data, Year == 2014)
+y<-c()
+for(i in 1:nrow(x)){
+  y<-c(y, rep(x[i,"Length"], x[i, "Frequency"]))
+}
+data4<-as.data.frame(matrix(c(rep(1, sum(x$Frequency)), rep(x[2, "Year"], sum(x$Frequency)), y), ncol=3, nrow=sum(x$Frequency)))
+x<-subset(data, Year == 2015)
+y<-c()
+for(i in 1:nrow(x)){
+  y<-c(y, rep(x[i,"Length"], x[i, "Frequency"]))
+}
+data5<-as.data.frame(matrix(c(rep(1, sum(x$Frequency)), rep(x[2, "Year"], sum(x$Frequency)), y), ncol=3, nrow=sum(x$Frequency)))
+x<-subset(data, Year == 2016)
+y<-c()
+for(i in 1:nrow(x)){
+  y<-c(y, rep(x[i,"Length"], x[i, "Frequency"]))
+}
+data6<-as.data.frame(matrix(c(rep(1, sum(x$Frequency)), rep(x[2, "Year"], sum(x$Frequency)), y), ncol=3, nrow=sum(x$Frequency)))
+x<-subset(data, Year == 2017)
+y<-c()
+for(i in 1:nrow(x)){
+  y<-c(y, rep(x[i,"Length"], x[i, "Frequency"]))
+}
+data7<-as.data.frame(matrix(c(rep(1, sum(x$Frequency)), rep(x[2, "Year"], sum(x$Frequency)), y), ncol=3, nrow=sum(x$Frequency)))
+x<-subset(data, Year == 2018)
+y<-c()
+for(i in 1:nrow(x)){
+  y<-c(y, rep(x[i,"Length"], x[i, "Frequency"]))
+}
+data8<-as.data.frame(matrix(c(rep(1, sum(x$Frequency)), rep(x[2, "Year"], sum(x$Frequency)), y), ncol=3, nrow=sum(x$Frequency)))
+last<-rbind(data1, data2, data3, data4, data5, data6, data7, data8)
+colnames(last)<-c("Fleet", "Year", "Length")
+last[,"Length"]<-last[,"Length"]/10
