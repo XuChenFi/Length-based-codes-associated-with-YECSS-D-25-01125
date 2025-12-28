@@ -1,6 +1,6 @@
 library(dplyr)
 #Annual data processing used for LIME input
-data<-read.csv("data/Year.csv")
+data<-read.csv("LIME/Year.csv")
 data[,"Frequency"]<-ceiling(data[,"Frequency"])
 x<-subset(data, Year == 2007)
 y<-c()
