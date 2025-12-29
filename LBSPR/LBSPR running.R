@@ -1,7 +1,7 @@
 library(LBSPR)
 ##LBSPR
 data<-read.csv(LIME/Year.csv)
-x<-subset(data, Year == 2018)
+x<-subset(data, Year == 2018)#2007&2011&2013:2018
 x[,"Length"]<-x[,"Length"]/10
 LB_lengths <- new("LB_lengths")
 LB_lengths@LMids <- x[,1]
