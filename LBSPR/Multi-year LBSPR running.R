@@ -51,3 +51,4 @@ Len2 <- new("LB_lengths", LB_pars=LB_pars, file=paste0("C:/data.csv"),
 dataType="raw")
 lbspr_res <- LBSPRfit(LB_pars=LB_pars, LB_lengths=Len2, Control=list(modtype=c("GTG")))
 spr <- lbspr_res@SPR
+#Final outputs looks not good, therefore data were analyzed one year by pne year
