@@ -272,4 +272,5 @@ plotSize <- function(LB_obj=NULL, size.axtex=12, size.title=14, Title=NULL,
   }
   
   bplot
+
 }
